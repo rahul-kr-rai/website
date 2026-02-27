@@ -47,7 +47,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       blogPosts,
-      datesInfo,
+      datesInfo: datesInfo ?? [],
       fallback: false,
     },
   };
