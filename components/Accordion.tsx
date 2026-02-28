@@ -6,6 +6,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
+import { Plus, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface AccordionItem {
@@ -114,9 +115,11 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
                         : 'hover:border-primary/50',
                     )}
                   >
-                    <span className='text-sm font-bold leading-none select-none'>
-                      {openItems.has(item.id) ? '×' : '+'}
-                    </span>
+                    {openItems.has(item.id) ? (
+                      <X className='w-4 h-4' />
+                    ) : (
+                      <Plus className='w-4 h-4' />
+                    )}
                   </div>
                 </div>
               </div>
