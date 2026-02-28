@@ -186,8 +186,8 @@ describe('Accordion Component', () => {
 
     // Check that the circle icon shows the correct state
     cy.get(`[data-test="accordion-toggle-${firstItem.id}"]`)
-      .find('span')
-      .should('have.text', '×');
+      .find('svg')
+      .should('have.class', 'lucide-x');
   });
 
   // Test visual states when accordion items are closed
@@ -201,8 +201,8 @@ describe('Accordion Component', () => {
 
     // Check that the circle icon shows the correct state for closed items
     cy.get(`[data-test="accordion-toggle-${firstItem.id}"]`)
-      .find('span')
-      .should('have.text', '+');
+      .find('svg')
+      .should('have.class', 'lucide-plus');
 
     // Check that the question title doesn't have active color class
     cy.get(`[data-test="accordion-question-${firstItem.id}"]`).should(
